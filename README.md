@@ -31,6 +31,6 @@ This app demonstrates **Clean Architecture, SOLID principles, state management, 
 
 ### **1️⃣ Clone the repository**
 ```sh
-git clone https://github.com/YOUR_USERNAME/flutter_pokedex_app.git
-cd flutter_pokedex_app
+git clone https://github.com/jerry6891/PokeDexApp.git
+cd PokeDexApp
 
