@@ -31,11 +31,15 @@ class PokedexScreenState extends State<PokedexScreen> {
     final provider = Provider.of<PokedexProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Pokédex"),
+        title: const Text(
+          "Pokédex",
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.red,
+        iconTheme: const IconThemeData(color: Colors.white),
         actions: [
           IconButton(
-            icon: const Icon(Icons.sort),
+            icon: const Icon(Icons.sort, color: Colors.white),
             onPressed: () => _showSortDialog(provider),
           ),
         ],
@@ -52,27 +56,32 @@ class PokedexScreenState extends State<PokedexScreen> {
                 prefixIcon: const Icon(Icons.search),
               ),
               onChanged: (value) {
-                provider.sortPokemon(value);
+                // provider.sortPokemon(value);
+                provider.searchPokemon(value);
               },
             ),
           ),
           Expanded(
-            child: provider.isLoading && provider.pokemonList.isEmpty
-                ? const Center(child: CircularProgressIndicator())
-                : GridView.builder(
-                    controller: _scrollController,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 8,
-                      mainAxisSpacing: 8,
-                      childAspectRatio: 1.2,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: provider.isLoading && provider.pokemonList.isEmpty
+                  ? const Center(child: CircularProgressIndicator())
+                  : GridView.builder(
+                      controller: _scrollController,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 16,
+                        mainAxisSpacing: 16,
+                        childAspectRatio: 1.2,
+                      ),
+                      itemCount: provider.pokemonList.length,
+                      itemBuilder: (context, index) {
+                        return PokemonCard(
+                            pokemon: provider.pokemonList[index]);
+                      },
                     ),
-                    itemCount: provider.pokemonList.length,
-                    itemBuilder: (context, index) {
-                      return PokemonCard(pokemon: provider.pokemonList[index]);
-                    },
-                  ),
+            ),
           ),
         ],
       ),

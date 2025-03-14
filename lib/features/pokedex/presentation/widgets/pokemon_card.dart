@@ -6,7 +6,7 @@ import '../screens/pokemon_detail_screen.dart';
 class PokemonCard extends StatelessWidget {
   final Pokemon pokemon;
 
-  const PokemonCard({super.key, required this.pokemon});
+  const PokemonCard({Key? key, required this.pokemon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +23,24 @@ class PokemonCard extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         elevation: 4,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment:
+              MainAxisAlignment.center, // ✅ Ensure everything is centered
           children: [
-            CachedNetworkImage(
-              imageUrl: pokemon.imageUrl,
-              height: 80,
-              placeholder: (context, url) => const CircularProgressIndicator(),
-              errorWidget: (context, url, error) => const Icon(Icons.error),
+            SizedBox(
+              height: 80, // ✅ Ensures consistent height
+              width: 80, // ✅ Ensures consistent width
+              child: CachedNetworkImage(
+                imageUrl: pokemon.imageUrl,
+                placeholder: (context, url) => const Center(
+                  child: SizedBox(
+                    height: 30, // ✅ Keep spinner small and centered
+                    width: 30,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  ),
+                ),
+                errorWidget: (context, url, error) =>
+                    const Icon(Icons.error, size: 30),
+              ),
             ),
             const SizedBox(height: 8),
             Text(

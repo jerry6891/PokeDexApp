@@ -23,6 +23,12 @@ dev_dependencies:
     sdk: flutter
   mockito: ^5.4.0
   flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_icons:
+  android: false
+  ios: true
+  image_path: "assets/icon/pokedexicon.png"
 
 flutter:
   uses-material-design: true

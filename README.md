@@ -1,9 +1,10 @@
 # 🏆 Flutter Pokédex App
 
-A beautiful and functional **Pokédex app** built with **Flutter**, consuming the [PokéAPI](https://pokeapi.co/).  
+A beautiful and functional **Pokédex app** built with **Flutter**, consuming the [PokéAPI](https://pokeapi.co/).
+
 This app demonstrates **Clean Architecture, SOLID principles, state management, and API handling**.
 
-<img width="1165" alt="Screenshot 2025-03-13 at 10 25 38 AM" src="https://github.com/user-attachments/assets/6643bd50-1fce-401e-94a1-9e6a8bce3ad1" />
+---
 
 ## ✨ Features
 
@@ -23,14 +24,26 @@ This app demonstrates **Clean Architecture, SOLID principles, state management, 
 
 | Pokémon List | Sorting | Pokémon Details |
 |-------------|---------|----------------|
-| ![List](assets/list.png) | ![Sorting](assets/sorting.png) | ![Details](assets/details.png) |
+| ![List](assets/images/List.png) | ![Sorting](assets/images/Sorting.png) | ![Details](assets/images/Details.png) |
 
 ---
 
 ## 🚀 Installation Guide
 
 ### **1️⃣ Clone the repository**
-```sh
 git clone https://github.com/jerry6891/PokeDexApp.git
 cd PokeDexApp
 
+---
+
+## 🔧 Compilation Guide
+
+### **2️⃣ How to compile and/or run in Visual Studio Code or in Terminal?**
+flutter run -d <device-iOS-Simulator-ID> || flutter run -d macos
+
+---
+
+## 🔧 Compilation Guide
+
+### **2️⃣ How to compile and/or run in Visual Studio Code or in Terminal?**
+flutter run -d <device-iOS-Simulator-ID> || flutter run -d macos
