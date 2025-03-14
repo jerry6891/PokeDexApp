@@ -6,7 +6,7 @@ import '../screens/pokemon_detail_screen.dart';
 class PokemonCard extends StatelessWidget {
   final Pokemon pokemon;
 
-  const PokemonCard({Key? key, required this.pokemon}) : super(key: key);
+  const PokemonCard({super.key, required this.pokemon});
 
   @override
   Widget build(BuildContext context) {

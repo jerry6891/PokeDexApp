@@ -4,11 +4,13 @@ import '../../provider/pokedex_provider.dart';
 import '../widgets/pokemon_card.dart';
 
 class PokedexScreen extends StatefulWidget {
+  const PokedexScreen({super.key});
+
   @override
-  _PokedexScreenState createState() => _PokedexScreenState();
+  PokedexScreenState createState() => PokedexScreenState();
 }
 
-class _PokedexScreenState extends State<PokedexScreen> {
+class PokedexScreenState extends State<PokedexScreen> {
   final ScrollController _scrollController = ScrollController();
 
   @override
