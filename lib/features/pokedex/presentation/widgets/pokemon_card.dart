@@ -4,18 +4,28 @@ import '../../../../core/models/pokemon.dart';
 import '../screens/pokemon_detail_screen.dart';
 
 class PokemonCard extends StatelessWidget {
-  final Pokemon pokemon;
+  final List<Pokemon> pokemonList; // ✅ Pass full list
+  final int index; // ✅ Pass current index
 
-  const PokemonCard({Key? key, required this.pokemon}) : super(key: key);
+  const PokemonCard({
+    super.key,
+    required this.pokemonList,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final pokemon = pokemonList[index];
+
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => PokemonDetailScreen(pokemon: pokemon),
+            builder: (context) => PokemonDetailScreen(
+              pokemonList: pokemonList, // ✅ Pass the full list
+              currentIndex: index, // ✅ Pass the current Pokémon index
+            ),
           ),
         );
       },

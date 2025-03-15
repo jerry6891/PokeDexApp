@@ -78,7 +78,9 @@ class PokedexScreenState extends State<PokedexScreen> {
                       itemCount: provider.pokemonList.length,
                       itemBuilder: (context, index) {
                         return PokemonCard(
-                            pokemon: provider.pokemonList[index]);
+                          pokemonList: provider.pokemonList,
+                          index: index,
+                        );
                       },
                     ),
             ),

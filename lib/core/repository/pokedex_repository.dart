@@ -6,6 +6,7 @@ class PokedexRepository {
 
   PokedexRepository(this.apiService);
 
+  /// 🔹 Fetches Pokémon List and Details
   Future<List<Pokemon>> getPokemonList(int offset, int limit) async {
     final pokemonList = await apiService.fetchPokemonList(offset, limit);
     List<Pokemon> detailedList = [];

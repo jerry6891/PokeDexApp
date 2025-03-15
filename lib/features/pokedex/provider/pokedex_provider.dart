@@ -5,7 +5,7 @@ import '../../../core/repository/pokedex_repository.dart';
 class PokedexProvider extends ChangeNotifier {
   final PokedexRepository repository;
 
-  List<Pokemon> _pokemonList = [];
+  final List<Pokemon> _pokemonList = [];
   List<Pokemon> _filteredPokemonList = []; // ✅ List for filtered results
   List<Pokemon> get pokemonList =>
       _filteredPokemonList.isEmpty ? _pokemonList : _filteredPokemonList;
